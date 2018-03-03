@@ -1,10 +1,9 @@
 # Store
+![](app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
 SharedPreference to store custom objects and arrrayLists.
 
 Usage
 -----
-
-
 Store needs to be initialized. You should only do this 1 time, so placing the initialization in your Application is a good idea. An example for this would be:
 ```groovy
        [MyApplication.java]
