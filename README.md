@@ -35,16 +35,68 @@ Remember to also declare you Application class in the AndroidManifest.xml
 
 ```
 
-Store anything like
+
+#### for String
 ```groovy
-       //for int values
+       Store.put("TAG_DATA_STRING","Hello World");
+       String Hi = Store.getString("TAG_DATA_STRING"); //Hi = "Hello World"
+```
+#### for StringSet
+```groovy
+        Set<String> strings = new HashSet<>();
+        strings.add("one");
+        strings.add("two");
+        strings.add("three");
+       Store.put("TAG_DATA_STRING_SET",strings);
+       Set<String> stringsNew = Store.getStringSet("TAG_DATA_STRING_SET"); 
+```
+#### for int
+```groovy
        Store.put(5,"TAG_DATA_INT");
        int i = Store.getInt("TAG_DATA_INT"); //i = 5
 ```
+#### for long
+```groovy
+       Store.put("TAG_DATA_LONG",987654321);
+       long i = Store.getLong("TAG_DATA_LONG"); //i = 987654321
+```
+#### for float
+```groovy
+       Store.put("TAG_DATA_INT",5.0f);
+       int i = Store.getInt("TAG_DATA_FLOAT"); //i = 5.0f
+```
+#### for boolean
+```groovy
+       Store.put("TAG_DATA_BOOLEAN",true);
+       boolean val = Store.getBoolean("TAG_DATA_BOOLEAN"); //val = true;
+```
+#### for custom object
+```groovy
+       class User{
+              public Name;
+              public Age;
+              }
+              
+       User user = new User();
+       
+       Store.put("TAG_DATA_OBJECT",user)
+       User userNew = Store.getObject("TAG_DATA_OBJECT", User.class);
+```
+#### for custom object
+```groovy
+     
+       ArrayList<User> userArrayList = new ArrayList<>();
+       userArrayList.add(new User("Akshay",12));
+       userArrayList.add(new User("Aman",11));
+       
+       Store.put("TAG_DATA_ARRAYLIST",userArrayList);
+       ArrayList<User> userArrayListNew = Store.getArrayList("TAG_DATA_ARRAYLIST", User.class);
+```
+
 Download
 --------
 
- [ ![Download](https://api.bintray.com/packages/fxn769/android_projects/Oblique/images/download.svg) ](https://bintray.com/fxn769/android_projects/Oblique/_latestVersion)  or grab via Gradle:
+ [![Download](https://api.bintray.com/packages/fxn769/android_projects/Store/images/download.svg)](https://bintray.com/fxn769/android_projects/Store/_latestVersion)  or grab via Gradle:
 ```groovy
         compile 'com.fxn769:store:1.0'
 ```
