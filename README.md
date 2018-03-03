@@ -43,10 +43,10 @@ Remember to also declare you Application class in the AndroidManifest.xml
 ```
 #### for StringSet
 ```groovy
-        Set<String> strings = new HashSet<>();
-        strings.add("one");
-        strings.add("two");
-        strings.add("three");
+       Set<String> strings = new HashSet<>();
+       strings.add("one");
+       strings.add("two");
+       strings.add("three");
        Store.put("TAG_DATA_STRING_SET",strings);
        Set<String> stringsNew = Store.getStringSet("TAG_DATA_STRING_SET"); 
 ```
