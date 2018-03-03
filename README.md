@@ -35,7 +35,28 @@ Remember to also declare you Application class in the AndroidManifest.xml
 
 ```
 
-
+#### for custom object
+```groovy
+       class User{
+              public Name;
+              public Age;
+              }
+              
+       User user = new User();
+       
+       Store.put("TAG_DATA_OBJECT",user)
+       User userNew = Store.getObject("TAG_DATA_OBJECT", User.class);
+```
+#### for custom arraylist
+```groovy
+     
+       ArrayList<User> userArrayList = new ArrayList<>();
+       userArrayList.add(new User("Akshay",12));
+       userArrayList.add(new User("Aman",11));
+       
+       Store.put("TAG_DATA_ARRAYLIST",userArrayList);
+       ArrayList<User> userArrayListNew = Store.getArrayList("TAG_DATA_ARRAYLIST", User.class);
+```
 #### for String
 ```groovy
        Store.put("TAG_DATA_STRING","Hello World");
@@ -69,28 +90,6 @@ Remember to also declare you Application class in the AndroidManifest.xml
 ```groovy
        Store.put("TAG_DATA_BOOLEAN",true);
        boolean val = Store.getBoolean("TAG_DATA_BOOLEAN"); //val = true;
-```
-#### for custom object
-```groovy
-       class User{
-              public Name;
-              public Age;
-              }
-              
-       User user = new User();
-       
-       Store.put("TAG_DATA_OBJECT",user)
-       User userNew = Store.getObject("TAG_DATA_OBJECT", User.class);
-```
-#### for custom object
-```groovy
-     
-       ArrayList<User> userArrayList = new ArrayList<>();
-       userArrayList.add(new User("Akshay",12));
-       userArrayList.add(new User("Aman",11));
-       
-       Store.put("TAG_DATA_ARRAYLIST",userArrayList);
-       ArrayList<User> userArrayListNew = Store.getArrayList("TAG_DATA_ARRAYLIST", User.class);
 ```
 
 Download
