@@ -9,9 +9,9 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     private String Name;
-    private String Age;
+    private int Age;
 
-    public User(String name, String age) {
+    public User(String name, int age) {
         Name = name;
         Age = age;
     }
@@ -25,11 +25,11 @@ public class User implements Serializable {
         Name = name;
     }
 
-    public String getAge() {
+    public int getAge() {
         return Age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         Age = age;
     }
 }

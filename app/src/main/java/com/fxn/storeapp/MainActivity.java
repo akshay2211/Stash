@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (et2.getText().toString().isEmpty()) {
             et2.setError("Age is Empty");
         } else {
-            User user = new User(et1.getText().toString(), et2.getText().toString());
+            User user = new User(et1.getText().toString(), Integer.parseInt(et2.getText().toString()));
             et1.setText("");
             et2.setText("");
             et1.requestFocus();
