@@ -1,6 +1,6 @@
 ![](app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
 # Store
-SharedPreference to store custom objects and arrrayLists.
+This Library allows you to store custom objects and arrrayLists in SharedPreference just like you store string and int.
 
 Usage
 -----
