@@ -1,17 +1,17 @@
 ![](app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
-# Store
+# Stash
 This Library allows you to store custom objects and arrrayLists in SharedPreference just like you store string and int.
 
 Usage
 -----
-Store needs to be initialized. You should only do this 1 time, so placing the initialization in your Application is a good idea. An example for this would be:
+Stash needs to be initialized. You should only do this 1 time, so placing the initialization in your Application is a good idea. An example for this would be:
 ```groovy
        [MyApplication.java]
        public class MyApplication extends Application {
            @Override
            public void onCreate() {
                super.onCreate();
-               Store.init(this);
+               Stash.init(this);
            }
        }
 
@@ -43,8 +43,8 @@ Remember to also declare you Application class in the AndroidManifest.xml
               
        User user = new User();
        
-       Store.put("TAG_DATA_OBJECT",user)
-       User userNew = Store.getObject("TAG_DATA_OBJECT", User.class);
+       Stash.put("TAG_DATA_OBJECT",user)
+       User userNew = Stash.getObject("TAG_DATA_OBJECT", User.class);
 ```
 #### for custom arraylist
 ```groovy
@@ -53,13 +53,13 @@ Remember to also declare you Application class in the AndroidManifest.xml
        userArrayList.add(new User("Akshay",12));
        userArrayList.add(new User("Aman",11));
        
-       Store.put("TAG_DATA_ARRAYLIST",userArrayList);
-       ArrayList<User> userArrayListNew = Store.getArrayList("TAG_DATA_ARRAYLIST", User.class);
+       Stash.put("TAG_DATA_ARRAYLIST",userArrayList);
+       ArrayList<User> userArrayListNew = Stash.getArrayList("TAG_DATA_ARRAYLIST", User.class);
 ```
 #### for String
 ```groovy
-       Store.put("TAG_DATA_STRING","Hello World");
-       String Hi = Store.getString("TAG_DATA_STRING"); //Hi = "Hello World"
+       Stash.put("TAG_DATA_STRING","Hello World");
+       String Hi = Stash.getString("TAG_DATA_STRING"); //Hi = "Hello World"
 ```
 #### for StringSet
 ```groovy
@@ -67,49 +67,49 @@ Remember to also declare you Application class in the AndroidManifest.xml
        strings.add("one");
        strings.add("two");
        strings.add("three");
-       Store.put("TAG_DATA_STRING_SET",strings);
-       Set<String> stringsNew = Store.getStringSet("TAG_DATA_STRING_SET"); 
+       Stash.put("TAG_DATA_STRING_SET",strings);
+       Set<String> stringsNew = Stash.getStringSet("TAG_DATA_STRING_SET"); 
 ```
 #### for int
 ```groovy
-       Store.put(5,"TAG_DATA_INT");
-       int i = Store.getInt("TAG_DATA_INT"); //i = 5
+       Stash.put(5,"TAG_DATA_INT");
+       int i = Stash.getInt("TAG_DATA_INT"); //i = 5
 ```
 #### for long
 ```groovy
-       Store.put("TAG_DATA_LONG",987654321);
-       long i = Store.getLong("TAG_DATA_LONG"); //i = 987654321
+       Stash.put("TAG_DATA_LONG",987654321);
+       long i = Stash.getLong("TAG_DATA_LONG"); //i = 987654321
 ```
 #### for float
 ```groovy
-       Store.put("TAG_DATA_INT",5.0f);
-       int i = Store.getInt("TAG_DATA_FLOAT"); //i = 5.0f
+       Stash.put("TAG_DATA_INT",5.0f);
+       int i = Stash.getInt("TAG_DATA_FLOAT"); //i = 5.0f
 ```
 #### for boolean
 ```groovy
-       Store.put("TAG_DATA_BOOLEAN",true);
-       boolean val = Store.getBoolean("TAG_DATA_BOOLEAN"); //val = true;
+       Stash.put("TAG_DATA_BOOLEAN",true);
+       boolean val = Stash.getBoolean("TAG_DATA_BOOLEAN"); //val = true;
 ```
 
 Download
 --------
 
- [![Download](https://api.bintray.com/packages/fxn769/android_projects/Store/images/download.svg)](https://bintray.com/fxn769/android_projects/Store/_latestVersion)  or grab via Gradle:
+ [![Download](https://api.bintray.com/packages/fxn769/android_projects/Stash/images/download.svg)](https://bintray.com/fxn769/android_projects/Stash/_latestVersion)  or grab via Gradle:
 ```groovy
-        compile 'com.fxn769:store:1.0'
+        compile 'com.fxn769:stash:1.0'
 ```
 or Maven:
 ```xml
         <dependency>
           <groupId>com.fxn769</groupId>
-          <artifactId>store</artifactId>
+          <artifactId>stash</artifactId>
           <version>1.0</version>
           <type>pom</type>
         </dependency>
 ```
 or ivy:
 ```xml
-        <dependency org='com.fxn769' name='store' rev='1.0'>
+        <dependency org='com.fxn769' name='stash' rev='1.0'>
           <artifact name='oblique' ext='pom' ></artifact>
         </dependency>
 ```
