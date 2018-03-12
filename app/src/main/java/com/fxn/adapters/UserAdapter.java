@@ -58,7 +58,7 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         final ViewHolder viewHolder = (ViewHolder) holder;
         User user = mDataset.get(position);
         viewHolder.Name.setText(user.getName());
-        viewHolder.Age.setText(user.getAge());
+        viewHolder.Age.setText(String.valueOf(user.getAge()));
     }
 
     @Override
