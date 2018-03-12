@@ -110,7 +110,7 @@ or Maven:
 or ivy:
 ```xml
         <dependency org='com.fxn769' name='stash' rev='1.0'>
-          <artifact name='oblique' ext='pom' ></artifact>
+          <artifact name='stash' ext='pom' ></artifact>
         </dependency>
 ```
 
