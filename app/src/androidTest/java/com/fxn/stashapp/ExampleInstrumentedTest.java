@@ -1,4 +1,4 @@
-package com.fxn.storeapp;
+package com.fxn.stashapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

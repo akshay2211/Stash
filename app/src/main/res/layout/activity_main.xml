@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_margin="12dp"
     android:orientation="vertical"
-    tools:context="com.fxn.storeapp.MainActivity">
+    tools:context="com.fxn.stashapp.MainActivity">
 
 
     <TextView

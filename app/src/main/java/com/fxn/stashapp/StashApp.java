@@ -1,19 +1,19 @@
-package com.fxn.storeapp;
+package com.fxn.stashapp;
 
 import android.app.Application;
 import android.support.multidex.MultiDex;
 
-import com.fxn.store.Store;
+import com.fxn.stash.Stash;
 
 /**
  * Created by akshay on 02/03/18.
  */
 
-public class StoreApp extends Application {
+public class StashApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Store.init(this);
+        Stash.init(this);
         MultiDex.install(this);
     }
 }

@@ -1,4 +1,4 @@
-package com.fxn.storeapp;
+package com.fxn.stashapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 import com.fxn.adapters.UserAdapter;
 import com.fxn.modal.User;
-import com.fxn.store.Store;
+import com.fxn.stash.Stash;
 
 import java.util.ArrayList;
 
@@ -29,18 +29,18 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.store)
     public void store(View view) {
-        Store.put(TAG_ARRAYLIST_STORE, userAdapter.getList());
+        Stash.put(TAG_ARRAYLIST_STORE, userAdapter.getList());
     }
 
     @OnClick(R.id.get)
     public void get(View view) {
-        ArrayList<User> mylist = Store.getArrayList(TAG_ARRAYLIST_STORE, User.class);
+        ArrayList<User> mylist = Stash.getArrayList(TAG_ARRAYLIST_STORE, User.class);
         userAdapter.updateAll(mylist);
     }
 
     @OnClick(R.id.clear)
     public void clear(View view) {
-        Store.clearAll();
+        Stash.clearAll();
         userAdapter.clearAll();
     }
 

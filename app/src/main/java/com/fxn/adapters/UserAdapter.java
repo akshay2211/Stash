@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.fxn.modal.User;
-import com.fxn.storeapp.R;
+import com.fxn.stashapp.R;
 
 import java.util.ArrayList;
 

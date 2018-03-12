@@ -1,4 +1,4 @@
-package com.fxn.store;
+package com.fxn.stash;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

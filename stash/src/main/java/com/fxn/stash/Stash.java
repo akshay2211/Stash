@@ -1,4 +1,4 @@
-package com.fxn.store;
+package com.fxn.stash;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -17,20 +17,20 @@ import java.util.Set;
  * Created by akshay on 01/03/18.
  */
 
-public class Store {
+public class Stash {
 
-    private static Store store;
+    private static Stash stash;
     private SharedPreferences sp;
 
     public static void init(Context context) {
-        store = new Store();
-        if (store.sp == null) {
-            store.sp = PreferenceManager.getDefaultSharedPreferences(context);
+        stash = new Stash();
+        if (stash.sp == null) {
+            stash.sp = PreferenceManager.getDefaultSharedPreferences(context);
         }
     }
 
     private static void checkfornull() {
-        if (store == null)
+        if (stash == null)
             throw new NullPointerException("Call init() method in application class");
     }
 
@@ -38,7 +38,7 @@ public class Store {
     public static void put(String key, String value) {
         checkfornull();
         try {
-            store.sp.edit().putString(key, value).commit();
+            stash.sp.edit().putString(key, value).commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -48,7 +48,7 @@ public class Store {
     public static void put(String key, Set<String> value) {
         checkfornull();
         try {
-            store.sp.edit().putStringSet(key, value).commit();
+            stash.sp.edit().putStringSet(key, value).commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,7 +58,7 @@ public class Store {
     public static void put(String key, int value) {
         checkfornull();
         try {
-            store.sp.edit().putInt(key, value).commit();
+            stash.sp.edit().putInt(key, value).commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -68,7 +68,7 @@ public class Store {
     public static void put(String key, long value) {
         checkfornull();
         try {
-            store.sp.edit().putLong(key, value).commit();
+            stash.sp.edit().putLong(key, value).commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -78,7 +78,7 @@ public class Store {
     public static void put(String key, float value) {
         checkfornull();
         try {
-            store.sp.edit().putFloat(key, value).commit();
+            stash.sp.edit().putFloat(key, value).commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -88,7 +88,7 @@ public class Store {
     public static void put(String key, boolean value) {
         checkfornull();
         try {
-            store.sp.edit().putBoolean(key, value).commit();
+            stash.sp.edit().putBoolean(key, value).commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -99,7 +99,7 @@ public class Store {
         checkfornull();
         try {
             Gson gson = new GsonBuilder().create();
-            store.sp.edit().putString(key, gson.toJson(value).toString()).commit();
+            stash.sp.edit().putString(key, gson.toJson(value).toString()).commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -109,7 +109,7 @@ public class Store {
     public static String getString(String key, String defaultvalue) {
         checkfornull();
         try {
-            return store.sp.getString(key, defaultvalue);
+            return stash.sp.getString(key, defaultvalue);
         } catch (Exception e) {
             e.printStackTrace();
             return defaultvalue;
@@ -132,7 +132,7 @@ public class Store {
     public static int getInt(String key, int defaultvalue) {
         checkfornull();
         try {
-            return store.sp.getInt(key, defaultvalue);
+            return stash.sp.getInt(key, defaultvalue);
         } catch (Exception e) {
             e.printStackTrace();
             return defaultvalue;
@@ -143,7 +143,7 @@ public class Store {
     public static long getLong(String key, long defaultvalue) {
         checkfornull();
         try {
-            return store.sp.getLong(key, defaultvalue);
+            return stash.sp.getLong(key, defaultvalue);
         } catch (Exception e) {
             e.printStackTrace();
             return defaultvalue;
@@ -154,7 +154,7 @@ public class Store {
     public static float getFloat(String key, float defaultvalue) {
         checkfornull();
         try {
-            return store.sp.getFloat(key, defaultvalue);
+            return stash.sp.getFloat(key, defaultvalue);
         } catch (Exception e) {
             e.printStackTrace();
             return defaultvalue;
@@ -165,7 +165,7 @@ public class Store {
     public static boolean getBoolean(String key, boolean defaultvalue) {
         checkfornull();
         try {
-            return store.sp.getBoolean(key, defaultvalue);
+            return stash.sp.getBoolean(key, defaultvalue);
         } catch (Exception e) {
             e.printStackTrace();
             return defaultvalue;
@@ -177,7 +177,7 @@ public class Store {
         checkfornull();
         try {
             Gson gson = new GsonBuilder().create();
-            return gson.fromJson(store.sp.getString(key, ""), tClass);
+            return gson.fromJson(stash.sp.getString(key, ""), tClass);
         } catch (Exception e) {
             Log.e("gson", e.getMessage());
             return "";
@@ -188,7 +188,7 @@ public class Store {
     public static <T> ArrayList<T> getArrayList(String key, Class<?> tClass) {
         Log.e("_+_++__+_+", "" + tClass.getName());
         Gson gson = new Gson();
-        String data = store.sp.getString(key, "");
+        String data = stash.sp.getString(key, "");
         if (!data.trim().isEmpty()) {
             Type type = new GenericType(tClass);
             return (ArrayList<T>) gson.fromJson(data, type);
@@ -200,7 +200,7 @@ public class Store {
     public static void clear(String key) {
         checkfornull();
         try {
-            store.sp.edit().remove(key);
+            stash.sp.edit().remove(key);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -210,7 +210,7 @@ public class Store {
     public static void clearAll() {
         checkfornull();
         try {
-            store.sp.edit().clear().commit();
+            stash.sp.edit().clear().commit();
         } catch (Exception e) {
             e.printStackTrace();
         }

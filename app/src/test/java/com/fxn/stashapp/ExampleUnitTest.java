@@ -1,4 +1,4 @@
-package com.fxn.store;
+package com.fxn.stashapp;
 
 import org.junit.Test;
 
