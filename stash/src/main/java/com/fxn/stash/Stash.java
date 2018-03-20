@@ -38,7 +38,7 @@ public class Stash {
     public static void put(String key, String value) {
         checkfornull();
         try {
-            stash.sp.edit().putString(key, value).commit();
+            stash.sp.edit().putString(key, value).apply();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -48,7 +48,7 @@ public class Stash {
     public static void put(String key, Set<String> value) {
         checkfornull();
         try {
-            stash.sp.edit().putStringSet(key, value).commit();
+            stash.sp.edit().putStringSet(key, value).apply();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,7 +58,7 @@ public class Stash {
     public static void put(String key, int value) {
         checkfornull();
         try {
-            stash.sp.edit().putInt(key, value).commit();
+            stash.sp.edit().putInt(key, value).apply();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -68,7 +68,7 @@ public class Stash {
     public static void put(String key, long value) {
         checkfornull();
         try {
-            stash.sp.edit().putLong(key, value).commit();
+            stash.sp.edit().putLong(key, value).apply();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -78,7 +78,7 @@ public class Stash {
     public static void put(String key, float value) {
         checkfornull();
         try {
-            stash.sp.edit().putFloat(key, value).commit();
+            stash.sp.edit().putFloat(key, value).apply();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -88,7 +88,7 @@ public class Stash {
     public static void put(String key, boolean value) {
         checkfornull();
         try {
-            stash.sp.edit().putBoolean(key, value).commit();
+            stash.sp.edit().putBoolean(key, value).apply();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -99,7 +99,7 @@ public class Stash {
         checkfornull();
         try {
             Gson gson = new GsonBuilder().create();
-            stash.sp.edit().putString(key, gson.toJson(value).toString()).commit();
+            stash.sp.edit().putString(key, gson.toJson(value).toString()).apply();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -200,7 +200,7 @@ public class Stash {
     public static void clear(String key) {
         checkfornull();
         try {
-            stash.sp.edit().remove(key);
+            stash.sp.edit().remove(key).apply();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -210,7 +210,7 @@ public class Stash {
     public static void clearAll() {
         checkfornull();
         try {
-            stash.sp.edit().clear().commit();
+            stash.sp.edit().clear().apply();
         } catch (Exception e) {
             e.printStackTrace();
         }
