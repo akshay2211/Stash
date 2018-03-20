@@ -1,9 +1,11 @@
 ![](app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Stash-blue.svg?style=flat)](https://android-arsenal.com/details/1/6835)
-[![Download](https://api.bintray.com/packages/fxn769/android_projects/Stash/images/download.svg) ](https://bintray.com/fxn769/android_projects/Stash/_latestVersion)
-[![API](https://img.shields.io/badge/API-null%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=11)
+
 # Stash
 This Library allows you to store custom objects and arrrayLists in SharedPreference just like you store string and int.
+
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Stash-blue.svg?style=flat)](https://android-arsenal.com/details/1/6835)
+[![Download](https://api.bintray.com/packages/fxn769/android_projects/Stash/images/download.svg) ](https://bintray.com/fxn769/android_projects/Stash/_latestVersion)
+[![API](https://img.shields.io/badge/API-11%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=11)
 
 Usage
 -----
