@@ -96,20 +96,20 @@ Download
 
  [![Download](https://api.bintray.com/packages/fxn769/android_projects/Stash/images/download.svg)](https://bintray.com/fxn769/android_projects/Stash/_latestVersion)  or grab via Gradle:
 ```groovy
-        compile 'com.fxn769:stash:1.0'
+        compile 'com.fxn769:stash:1.1'
 ```
 or Maven:
 ```xml
         <dependency>
           <groupId>com.fxn769</groupId>
           <artifactId>stash</artifactId>
-          <version>1.0</version>
+          <version>1.1</version>
           <type>pom</type>
         </dependency>
 ```
 or ivy:
 ```xml
-        <dependency org='com.fxn769' name='stash' rev='1.0'>
+        <dependency org='com.fxn769' name='stash' rev='1.1'>
           <artifact name='stash' ext='pom' ></artifact>
         </dependency>
 ```
