@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.fxn.store.test", appContext.getPackageName());
+        assertEquals("com.fxn.stash.test", appContext.getPackageName());
     }
 }
