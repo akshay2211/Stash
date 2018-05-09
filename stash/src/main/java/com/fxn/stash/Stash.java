@@ -20,10 +20,12 @@ import java.util.Set;
 public class Stash {
 
     private static Stash stash;
+    private static Context instance;
     private SharedPreferences sp;
 
     public static void init(Context context) {
         stash = new Stash();
+        instance = context;
         if (stash.sp == null) {
             stash.sp = PreferenceManager.getDefaultSharedPreferences(context);
         }
@@ -116,6 +118,10 @@ public class Stash {
         }
     }
 
+    public static String getString(String key) {
+        return getString(key, "");
+    }
+
 
     //getStringSet
     public static Set<String> getStringSet(String key, Set<String> defaultvalue) {
@@ -126,6 +132,10 @@ public class Stash {
             e.printStackTrace();
             return defaultvalue;
         }
+    }
+
+    public static Set<String> getStringSet(String key) {
+        return getStringSet(key, null);
     }
 
     //getInt
@@ -139,6 +149,10 @@ public class Stash {
         }
     }
 
+    public static int getInt(String key) {
+        return getInt(key, 0);
+    }
+
     //getLong
     public static long getLong(String key, long defaultvalue) {
         checkfornull();
@@ -148,6 +162,10 @@ public class Stash {
             e.printStackTrace();
             return defaultvalue;
         }
+    }
+
+    public static long getLong(String key) {
+        return getLong(key, (long) 0);
     }
 
     //getFloat
@@ -161,6 +179,10 @@ public class Stash {
         }
     }
 
+    public static float getFloat(String key) {
+        return getFloat(key, 0.0f);
+    }
+
     //getBoolean
     public static boolean getBoolean(String key, boolean defaultvalue) {
         checkfornull();
@@ -170,6 +192,10 @@ public class Stash {
             e.printStackTrace();
             return defaultvalue;
         }
+    }
+
+    public static boolean getBoolean(String key) {
+        return getBoolean(key, false);
     }
 
     //getObject
