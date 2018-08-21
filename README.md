@@ -101,20 +101,20 @@ Download
 
  [![Download](https://api.bintray.com/packages/fxn769/android_projects/Stash/images/download.svg)](https://bintray.com/fxn769/android_projects/Stash/_latestVersion)  or grab via Gradle:
 ```groovy
-        compile 'com.fxn769:stash:1.3.1'
+        implementation 'com.fxn769:stash:1.3.2'
 ```
 or Maven:
 ```xml
         <dependency>
           <groupId>com.fxn769</groupId>
           <artifactId>stash</artifactId>
-          <version>1.3.1</version>
+          <version>1.3.2</version>
           <type>pom</type>
         </dependency>
 ```
 or ivy:
 ```xml
-        <dependency org='com.fxn769' name='stash' rev='1.3.1'>
+        <dependency org='com.fxn769' name='stash' rev='1.3.2'>
           <artifact name='stash' ext='pom' ></artifact>
         </dependency>
 ```
