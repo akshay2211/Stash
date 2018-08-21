@@ -127,7 +127,7 @@ public class Stash {
     public static Set<String> getStringSet(String key, Set<String> defaultvalue) {
         checkfornull();
         try {
-            return getStringSet(key, defaultvalue);
+            return stash.sp.getStringSet(key, defaultvalue);
         } catch (Exception e) {
             e.printStackTrace();
             return defaultvalue;
