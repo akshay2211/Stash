@@ -10,7 +10,7 @@ jobs:
       - image: circleci/android:api-25-alpha
     environment:
       JVM_OPTS: -Xmx3200m
-      ANDROID_HOME=/usr/local/android-sdk-linux
+      ANDROID_HOME: /usr/local/android-sdk-linux
     steps:
       - checkout
       - restore_cache:
