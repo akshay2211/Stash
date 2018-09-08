@@ -1,60 +1,30 @@
-# Java Gradle CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-java/ for more details
-#
 version: 2
 jobs:
   build:
-    working_directory: ~/code
-    docker:
-      - image: circleci/android:api-25-alpha
-    environment:
-      JVM_OPTS: -Xmx3200m
-      ANDROID_HOME: /usr/local/android-sdk-linux
-    machine:
-  environment:
-    ANDROID_TARGET: android-23
-    ADB_INSTALL_TIMEOUT: 12
-    ANDROID_HOME: /usr/local/android-sdk-linux
-
-  java:
-    version: oraclejdk8
-
-
-## Customize checkout
-checkout:
-  post:
-    - git submodule sync
-    - git submodule update --init # use submodules
-
-## Customize dependencies
-dependencies:
-  pre:
-    # workaround for "failed to find Build Tools revision xx"
-    # https://discuss.circleci.com/t/android-build-tools-23-0-2-not-available/455/3
-    - echo y | android update sdk --no-ui --all --filter platform-tools,tools,extra-android-m2repository,extra-google-m2repository,android-23
-    - echo y | android update sdk --no-ui --all --filter build-tools-23.0.3
-
-  override:
-    -  sudo ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies 
-    steps:
-      - checkout
-      - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  
-"app/build.gradle" }}
-      - run:
-          name: Download Dependencies
-          command: ./gradlew androidDependencies
-      - save_cache:
-          paths:
-            - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  
-"app/build.gradle" }}
-      - run:
-          name: Run Tests
-          command: ./gradlew lint test
-      - store_artifacts:
-          path: app/build/reports
-          destination: reports
-      - store_test_results:
-          path: app/build/test-results
+working_directory: ~/code
+docker:
+  - image: circleci/android:api-25-alpha
+environment:
+  JVM_OPTS: -Xmx3200m
+steps:
+  - checkout
+  - restore_cache:
+      key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+  - run:
+     name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
+     command: sudo chmod +x ./gradlew
+  - run:
+      name: Download Dependencies
+      command: ./gradlew androidDependencies
+  - save_cache:
+      paths:
+        - ~/.gradle
+      key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+  - run:
+      name: Run Tests
+      command: ./gradlew lint test
+  - store_artifacts:
+      path: app/build/reports
+      destination: reports
+  - store_test_results:
+      path: app/build/test-results
