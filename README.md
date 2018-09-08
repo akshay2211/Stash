@@ -3,6 +3,7 @@
 # Stash
 This Library allows you to store custom objects and arrrayLists in SharedPreference just like you store string and int.
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4aa6e0861732462f89b1a041171ed6ed)](https://app.codacy.com/app/akshay2211/Stash?utm_source=github.com&utm_medium=referral&utm_content=akshay2211/Stash&utm_campaign=Badge_Grade_Dashboard)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Stash-blue.svg?style=flat)](https://android-arsenal.com/details/1/6835)
 [![Download](https://api.bintray.com/packages/fxn769/android_projects/Stash/images/download.svg) ](https://bintray.com/fxn769/android_projects/Stash/_latestVersion)
 [![API](https://img.shields.io/badge/API-11%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=11)
