@@ -5,8 +5,7 @@
     <application
         android:name="com.fxn.stashapp.StashApp"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:label="@string/app_name">
         <activity android:name="com.fxn.stashapp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
