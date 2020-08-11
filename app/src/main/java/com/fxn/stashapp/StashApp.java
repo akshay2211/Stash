@@ -1,7 +1,8 @@
 package com.fxn.stashapp;
 
 import android.app.Application;
-import android.support.multidex.MultiDex;
+
+import androidx.multidex.MultiDex;
 
 import com.fxn.stash.Stash;
 

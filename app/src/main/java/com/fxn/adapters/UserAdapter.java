@@ -1,18 +1,17 @@
 package com.fxn.adapters;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.fxn.modal.User;
 import com.fxn.stashapp.R;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by akshay on 02/03/18.
@@ -68,14 +67,13 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        @BindView(R.id.Name)
         public TextView Name;
-        @BindView(R.id.Age)
         public TextView Age;
 
         public ViewHolder(View v) {
             super(v);
-            ButterKnife.bind(this, v);
+            Name = v.findViewById(R.id.Name);
+            Age = v.findViewById(R.id.Age);
         }
     }
 }
