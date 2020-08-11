@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,21 +18,34 @@
         android:text="Add values to Preferences" />
 
     <LinearLayout
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_marginBottom="5dp"
+        android:padding="12dp"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/et1"
+            android:gravity="center"
+            android:nextFocusRight="@id/et2"
+            android:nextFocusDown="@id/et2"
+            android:nextFocusForward="@id/et2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Name"
+            android:textColor="@color/colorAccent"
+            android:textColorHighlight="@color/colorPrimary"
+            android:textColorLink="@color/colorAccent"
             android:inputType="textPersonName"
             android:lines="1"
             android:minWidth="200dp" />
 
         <EditText
+            android:gravity="center"
+            android:textColor="@color/colorAccent"
+            android:textColorHighlight="@color/colorPrimary"
+            android:textColorLink="@color/colorAccent"
             android:id="@+id/et2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,15 +55,22 @@
             android:inputType="number"
             android:lines="1" />
 
-        <TextView
-            android:id="@+id/addToList"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:gravity="center"
-            android:text="Add to List" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/addToList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gradient"
+        android:gravity="center"
+
+        android:onClick="addToList"
+        android:padding="8dp"
+        android:text="Add to List"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimaryDark" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,7 +78,9 @@
         android:orientation="horizontal">
 
         <TextView
+            android:onClick="store"
             android:id="@+id/store"
+            android:textSize="11dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -65,7 +88,9 @@
             android:text="Save in Preference" />
 
         <TextView
+            android:onClick="get"
             android:id="@+id/get"
+            android:textSize="11dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
@@ -74,19 +99,21 @@
             android:text="Get From Preference" />
 
         <TextView
+            android:onClick="clear"
             android:id="@+id/clear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:gravity="center"
+            android:textSize="11dp"
             android:text="Clear Preference" />
 
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 </LinearLayout>
