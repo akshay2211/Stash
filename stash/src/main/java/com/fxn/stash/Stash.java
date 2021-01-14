@@ -242,6 +242,16 @@ public class Stash {
         }
     }
 
+    public static void addListener(StashListener listener){
+        checkfornull();
+        stash.sp.registerOnSharedPreferenceChangeListener(listener);
+    }
+
+    public static void removeListener(StashListener listener){
+        checkfornull();
+        stash.sp.unregisterOnSharedPreferenceChangeListener(listener);
+    }
+
     private static class GenericType implements ParameterizedType {
 
         private Type type;
@@ -266,5 +276,9 @@ public class Stash {
         }
 
         // implement equals method too! (as per javadoc)
+    }
+
+    public interface StashListener extends SharedPreferences.OnSharedPreferenceChangeListener {
+
     }
 }
